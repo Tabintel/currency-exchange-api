@@ -16,6 +16,12 @@ type ExchangeService struct {
 	APIKeyB string // API key for Service B
 }
 
+func NewExchangeService() *ExchangeService {
+	return &ExchangeService{
+		APIKeyA: os.Getenv("SERVICE_A_API_KEY"),
+		APIKeyB: os.Getenv("SERVICE_B_API_KEY"),
+	}
+}
 
 // ExchangeRateResponse represents the response structure for exchange rate data
 type ExchangeRateResponse struct {
